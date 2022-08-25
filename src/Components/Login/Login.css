@@ -2,7 +2,8 @@
     display: flex;
     width: 100%;
     gap: 40px;
-    
+    z-index: 1;
+    background-color: white;
 }
 
 .leftLogin{

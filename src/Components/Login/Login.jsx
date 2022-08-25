@@ -13,22 +13,21 @@ import RegistrarConNum from "../RegistrarConNum/RegistrarConNum";
 import React from "react";
 
 export default function Login() {
-  const [mostrar, setMostrar] = useState("none");
-  const contenedor = document.getElementById("conteinerLogin");
-  console.log(contenedor);
+  const [mostrar, setMostrar] = useState(false);
+  const cuerpo = document.querySelector("body");
 
-  const registrarConNum = () => {
-    if (mostrar === "none") {
-      setMostrar("flex");
-    } else {
-      setMostrar("none");
-    }
-    console.log(contenedor);
+  const openModal = () => {
+    setMostrar(true);
+    cuerpo.style.overflow = "hidden";
+  };
+
+  const cerrarModal = () => {
+    setMostrar(false);
+    cuerpo.style.overflow = "";
   };
 
   return (
     <>
-      <RegistrarConNum mostrar={mostrar} />
       <div id="conteinerLogin">
         <div className="leftLogin">
           <img className="twitterWhite" src={TwitterWhite} alt="twitter-Logo" />
@@ -78,7 +77,7 @@ export default function Login() {
             /> */}
             <p className="parrafoEntreBotones">o</p>
             <button
-              onClick={registrarConNum}
+              onClick={openModal}
               className="buttonLogin registroConTelefono"
             >
               <b>Regístrate con el número de teléfono</b>
@@ -108,7 +107,9 @@ export default function Login() {
           </div>
         </div>
       </div>
+
       <Footer />
+      <RegistrarConNum mostrar={mostrar} cerrarModal={cerrarModal} />
     </>
   );
 }
