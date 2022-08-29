@@ -1,0 +1,114 @@
+.conteinerIniciarSesion{
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    top: 0px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.308);
+}
+
+.subConteinerIniciarSesion{
+    width: 40%;
+    background-color: rgb(255, 253, 253);
+    border-radius: 15px;
+    height: max-content;
+    font-family: 'Source Sans Pro';
+    display: flex;
+}
+
+.xCloseLogin{
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    border: 4px solid white;
+    position: relative;
+    top: 10px;
+}
+
+.xCloseLogin:hover{
+    cursor: pointer;
+    background-color: 3px solid black;
+}
+.twitterLogoModal{
+    width: 50px;
+}
+
+.rightLoginModal{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.anchosLogin{
+    width: 60%;
+    height: 35px;
+}
+
+.inputLogin{
+    border-radius: 5px;
+    border: 2px solid rgb(204, 204, 204);
+    outline: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.inputLogin:focus{
+    border: 2px solid #1d9bf0
+}
+
+.oParrafo{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.buttonSiguiente{
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+.buttonSiguiente:hover{
+   transition: .5s; 
+    cursor: pointer;
+    opacity: 90%;
+}
+
+.buttonSiguiente:not(:hover){
+    transition: .5s;
+}
+
+.buttonOlvidarContraseña{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid rgb(187, 186, 186);
+    font-size: 14px;
+}
+
+.buttonOlvidarContraseña:hover{
+    cursor: pointer;
+    transition: .5s;
+    opacity: 90%;    
+    background-color: rgb(211, 211, 211);
+}
+
+.buttonOlvidarContraseña:not(:hover){
+    transition: .5s;
+}
+
+.noAccount{
+    color: rgb(65, 65, 65);
+}
+
+.registrateLink:link{
+    text-decoration: none;
+}

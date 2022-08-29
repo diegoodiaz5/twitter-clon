@@ -2,19 +2,31 @@ import "./Login.css";
 import Footer from "../Footer/Footer";
 import TwitterWhite from "../../Images/twitterWhite.png";
 import TwitterLogo from "../../Images/twitterLogo.png";
-// import Apple from "../../Images/apple.png";
 import GoogleG from "../../Images/googleG.png";
+import { GoogleLogin } from "react-google-login";
 import { useState } from "react";
 
+// import Apple from "../../Images/apple.png";
 // import AppleLogin from "react-apple-login";
-import { GoogleLogin } from "react-google-login";
+
 import RegistrarConNum from "../RegistrarConNum/RegistrarConNum";
+import IniciarSesion from "../IniciarSesion/IniciarSesion";
 
 import React from "react";
 
 export default function Login() {
   const [mostrar, setMostrar] = useState(false);
+  const [mostrarModalLogeo, setMostrarModalLogeo] = useState(false);
   const cuerpo = document.querySelector("body");
+
+  const openModalLogeo = () => {
+    setMostrarModalLogeo(true);
+    cuerpo.style.overflow = "hidden";
+  };
+  const cerrarModalLogeo = () => {
+    setMostrarModalLogeo(false);
+    cuerpo.style.overflow = "";
+  };
 
   const openModal = () => {
     setMostrar(true);
@@ -101,7 +113,10 @@ export default function Login() {
             <p className="cuentaPregunta">
               <b>¿Ya tienes una cuenta?</b>
             </p>
-            <button className="buttonLogin buttonIniciarSesion">
+            <button
+              className="buttonLogin buttonIniciarSesion"
+              onClick={openModalLogeo}
+            >
               <b>Iniciar sesión</b>
             </button>
           </div>
@@ -110,6 +125,10 @@ export default function Login() {
 
       <Footer />
       <RegistrarConNum mostrar={mostrar} cerrarModal={cerrarModal} />
+      <IniciarSesion
+        mostrarModalLogeo={mostrarModalLogeo}
+        cerrarModalLogeo={cerrarModalLogeo}
+      />
     </>
   );
 }
