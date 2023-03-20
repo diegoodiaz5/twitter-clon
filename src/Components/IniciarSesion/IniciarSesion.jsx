@@ -1,33 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./IniciarSesion.css";
-import XClose from "../../Images/xClose.png";
-import TwitterLogo from "../../Images/twitterLogo.png";
 import GoogleG from "../../Images/googleG.png";
 import { GoogleLogin } from "react-google-login";
 
 export default function IniciarSesion({ mostrarModalLogeo, cerrarModalLogeo }) {
-  let zzIndex = "";
-
-  if (mostrarModalLogeo === false) {
-    zzIndex = "-1";
-  } else zzIndex = "1";
-
+  useEffect(() => {
+    const conteinerIniciarSesion = document.getElementById("conteinerIniciarSesion");
+    if (mostrarModalLogeo === false) {
+      conteinerIniciarSesion.style.display = "none";
+      conteinerIniciarSesion.style.zIndex = "-1"
+    } else {
+      conteinerIniciarSesion.style.zIndex = "1"
+      conteinerIniciarSesion.style.display = "flex"
+    }
+  })
   return (
-    <div className="conteinerIniciarSesion" style={{ zIndex: `${zzIndex}` }}>
+    <div id="conteinerIniciarSesion">
       <div className="subConteinerIniciarSesion">
-        <img
-          onClick={cerrarModalLogeo}
-          className="xCloseLogin"
-          src={XClose}
-          alt="close-button"
-        />
-        <div className="rightLoginModal">
-          <img
-            src={TwitterLogo}
-            alt="twitter-logo"
-            className="twitterLogoModal"
-          />
-          <h1>Inicia sesión en Twitter</h1>
+        <div id="firstLineLogIn">
+          <img onClick={cerrarModalLogeo} src={require('../../Images/xClose.png')} alt="closeButton" className="closeButton" id="closeButtonLogIn"/>
+          <h1 id="twitterTitlteLogin">Inicia sesión en <p id="twitterTitle">Twitter</p></h1>   
+        </div>
           <GoogleLogin
             clientId="899094118766-i0obvramnap5vlnodfkvnkkeft47dbb9.apps.googleusercontent.com"
             render={(renderProps) => (
@@ -59,14 +52,12 @@ export default function IniciarSesion({ mostrarModalLogeo, cerrarModalLogeo }) {
           <p className="noAccount">
             <b>
               ¿No tienes una cuenta?
-              <a className="registrateLink" href="http://">
-                {" "}
+              <span className="registrateLink">
                 Regístrate
-              </a>
+              </span>
             </b>
           </p>
         </div>
       </div>
-    </div>
   );
 }

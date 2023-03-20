@@ -1,16 +1,16 @@
-.conteinerRegistrarConNum{
+#conteinerRegistrarConNum {
     width: 100%;
     height: 100vh;
     z-index: -1;
     top: 0px;
     position: fixed;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.308);
 }
 
-.subConteinerRegistrar{
+.subConteinerRegistrar {
     width: 40%;
     background-color: rgb(255, 253, 253);
     border-radius: 15px;
@@ -18,7 +18,7 @@
     font-family: 'Source Sans Pro';
 }
 
-.firstLine{
+.firstLine {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -26,41 +26,41 @@
     padding-left: 12px;
 }
 
-.xClose{
+.closeButton {
     width: 20px;
     height: 20px;
     border-radius: 100%;
-    border: 4px solid white
+    background-color: rgb(226, 223, 223);
+    border: 4px solid rgb(226, 223, 223);
 }
 
-.xClose:hover{
+.closeButton:hover {
     transition: .3s;
-    background-color: rgb(218, 216, 216);
-    border: 4px solid rgb(218, 216, 216);
+    background-color: rgb(196, 194, 194);
+    border: 4px solid rgb(196, 194, 194);
     cursor: pointer;
 }
 
-.xClose:not(:hover){
+.closeButton:not(:hover) {
     transition: .3s;
 }
 
-.pasos{
+.pasos {
     font-size: 22px;
     letter-spacing: 1.5px;
 }
 
-.conteinerModal{
-    padding-left: 70px;
-    padding-right: 70px;
+.conteinerModal {
+    padding: 0 70px;
     display: flex;
     flex-direction: column;
 }
 
-#inputNombre{
+#inputNombre {
     margin-bottom: 40px;
 }
 
-.inputPasoUno{
+.inputPasoUno {
     outline: none;
     height: 45px;
     border-radius: 5px;
@@ -69,63 +69,62 @@
     font-size: 16px;
 }
 
-.inputPasoUno:focus{
+.inputPasoUno:focus {
     border: 2px solid #1d9bf0;
 }
 
-.correoTel{
+.correoTel {
     color: #2aa1f1;
     text-align: end;
 }
 
-.correoTel:hover{
+.correoTel:hover {
     text-decoration: underline;
     cursor: pointer;
 }
 
-.fechaNacTitle{
+.fechaNacTitle {
     font-size: 16px;
     margin: 0;
 }
 
-.infoFechaNac{
+.infoFechaNac {
     margin-top: 10px;
     font-size: 14px;
     color: rgb(99, 96, 96);
     letter-spacing: .5px;
 }
 
-.fechaNac{
-    display: flex ;
+.fechaNac {
+    display: flex;
     justify-content: space-between;
 }
 
-.selectsRegistro{
+.selectsRegistro {
     height: 50px;
     outline: none;
     border: 2px solid rgb(221, 221, 221);
     border-radius: 5px;
 }
 
-.selectsRegistro:focus{
+.selectsRegistro:focus {
     border: 2px solid #1d9bf0;
 }
 
-#selectMes{
- width: 50%;
+#selectMes {
+    width: 50%;
 }
 
-#selectDia{
+#selectDia {
     width: 15%;
 }
 
-#selectAnio{
+#selectAnio {
     width: 30%;
 }
 
-.buttonNext{
-    margin-top: 20px;
-    margin-bottom: 20px;
+.buttonNext {
+    margin: 20px 0;
     background-color: #878a8c;
     color: white;
     border-radius: 30px;

@@ -1,6 +1,5 @@
 import "./RegistrarConNum.css";
-import React from "react";
-import XClose from "../../Images/xClose.png";
+import React, { useEffect } from "react";
 
 export default function RegistrarConNum({ mostrar, cerrarModal }) {
   const dia = () => {
@@ -42,11 +41,16 @@ export default function RegistrarConNum({ mostrar, cerrarModal }) {
     return arregloDeAnios;
   };
 
-  let zzIndex = "";
-
-  if (mostrar === false) {
-    zzIndex = "-1";
-  } else zzIndex = "1";
+  useEffect (() => {
+    const conteinerRegisterWithNum = document.getElementById("conteinerRegistrarConNum");
+    if (mostrar === false) {
+      conteinerRegisterWithNum.style.display = "none";
+      conteinerRegisterWithNum.style.zIndex = "-1"
+    } else {
+      conteinerRegisterWithNum.style.display = "flex";
+      conteinerRegisterWithNum.style.zIndex = "1"
+    }
+  })
 
   const inputTelefono = document.getElementById("telefonoInput");
   const inputCorreo = document.getElementById("correoInput");
@@ -64,15 +68,14 @@ export default function RegistrarConNum({ mostrar, cerrarModal }) {
   return (
     <>
       <div
-        className="conteinerRegistrarConNum"
-        style={{ zIndex: `${zzIndex}` }}
+        id="conteinerRegistrarConNum"
       >
         <div className="subConteinerRegistrar">
           <div className="firstLine">
             <img
               onClick={cerrarModal}
-              className="xClose"
-              src={XClose}
+              className="closeButton"
+              src={require('../../Images/xClose.png')}
               alt="close-button"
             />
             <p className="pasos">

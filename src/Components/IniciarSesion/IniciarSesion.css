@@ -1,114 +1,108 @@
-.conteinerIniciarSesion{
+#conteinerIniciarSesion {
     width: 100%;
     height: 100vh;
     z-index: -1;
     top: 0px;
     position: fixed;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.308);
 }
 
-.subConteinerIniciarSesion{
-    width: 40%;
-    background-color: rgb(255, 253, 253);
-    border-radius: 15px;
-    height: max-content;
-    font-family: 'Source Sans Pro';
-    display: flex;
-}
-
-.xCloseLogin{
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    border: 4px solid white;
-    position: relative;
-    top: 10px;
-}
-
-.xCloseLogin:hover{
-    cursor: pointer;
-    background-color: 3px solid black;
-}
-.twitterLogoModal{
-    width: 50px;
-}
-
-.rightLoginModal{
-    width: 100%;
+.subConteinerIniciarSesion {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 50px;
-    padding-right: 50px;
+    min-width: 600px;
+    max-width: 800px;
+    background-color: rgb(255, 253, 253);
+    border-radius: 15px;
+    min-height: max-content;
+    font-family: 'Source Sans Pro';
 }
 
-.anchosLogin{
+#firstLineLogIn {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+}
+
+#closeButtonLogIn {
+    position: absolute;
+    left: 20px;
+}
+
+#twitterTitle {
+    display: inline;
+    color: #55acee;
+}
+
+.anchosLogin {
     width: 60%;
     height: 35px;
 }
 
-.inputLogin{
+.inputLogin {
     border-radius: 5px;
     border: 2px solid rgb(204, 204, 204);
     outline: none;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 0 5px;
 }
 
-.inputLogin:focus{
+.inputLogin:focus {
     border: 2px solid #1d9bf0
 }
 
-.oParrafo{
-    margin-top: 10px;
-    margin-bottom: 10px;
+.oParrafo {
+    margin: 10px 0;
 }
 
-.buttonSiguiente{
+.buttonSiguiente {
     margin-top: 20px;
     background-color: black;
     color: white;
     border-radius: 20px;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
-.buttonSiguiente:hover{
-   transition: .5s; 
+.buttonSiguiente:hover {
+    transition: .5s;
     cursor: pointer;
     opacity: 90%;
 }
 
-.buttonSiguiente:not(:hover){
+.buttonSiguiente:not(:hover) {
     transition: .5s;
 }
 
-.buttonOlvidarContraseña{
+.buttonOlvidarContraseña {
     margin-top: 15px;
     margin-bottom: 15px;
     background-color: white;
     border-radius: 20px;
     border: 2px solid rgb(187, 186, 186);
-    font-size: 14px;
+    font-size: .9rem;
 }
 
-.buttonOlvidarContraseña:hover{
+.buttonOlvidarContraseña:hover {
     cursor: pointer;
     transition: .5s;
-    opacity: 90%;    
+    opacity: 90%;
     background-color: rgb(211, 211, 211);
 }
 
-.buttonOlvidarContraseña:not(:hover){
+.buttonOlvidarContraseña:not(:hover) {
     transition: .5s;
 }
 
-.noAccount{
+.noAccount {
     color: rgb(65, 65, 65);
 }
 
-.registrateLink:link{
-    text-decoration: none;
+.registrateLink {
+    color: blue;
+    cursor: pointer;
 }
